@@ -6,9 +6,6 @@ PROG = $(SRCS:.cc=)
 
 all: $(PROG)
 
-#%.o: %.cc
-#	$(CXX) $(CXXFLAGS) -o $@ $^
-
 $(PROG): % : %.o
 	$(CXX) $^ -o $@
 
@@ -18,4 +15,4 @@ clean:
 tidy:
 	rm -rf *.o
 
-.PHONY: all clean
+.PHONY: all clean tidy
